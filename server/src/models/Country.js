@@ -15,13 +15,13 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
 
-    flagImageUrl: {
+    image: {
       type: DataTypes.STRING,
       allowNull: false,
 
     },
 
-    continent: {
+    continents: {
       type: DataTypes.STRING,
       allowNull: false,
     },
