@@ -1,11 +1,15 @@
-const {getAllCountries, getCountryById,} = require("../controllers/countryControllers.js");
+const {getAllCountries, getCountryById, getCountryByName} = require("../controllers/countryControllers.js");
 
-const getAllCountriesHandler = async (req, res) => {
+const getCountriesHandler = async (req, res) => {
+    const {name} = req.query;
     try {
-        
+    if(name) {
+        const queryName = await getCountryByName(name);
+        res.status(200).send(queryName);
+    } else {
         const allCountries = await getAllCountries();
         res.status(200).send(allCountries);
-
+    }
     } catch (error) {
         res.status(500).send(error);
     }
@@ -25,4 +29,4 @@ const getCountryByIdHandler = async (req, res) => {
 
 }
 
-module.exports = {getAllCountriesHandler, getCountryByIdHandler};
+module.exports = {getCountriesHandler, getCountryByIdHandler};

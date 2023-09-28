@@ -13,7 +13,7 @@ const getAllCountries = async () => {
 };
 
 const getCountryById = async (id) => {
-    const country = await Country.findAll({
+    const country = await Country.findOne({
         where: {
             id: id.toUpperCase(),
         },
@@ -25,7 +25,16 @@ const getCountryById = async (id) => {
     return country;
 };
 
+const getCountryByName = async (name) => {
+    const country = await Country.findAll({
+        where: {
+            name: {
+                [Op.iLike]: `%${name}%`,
+            },
+        },
+    });
+    return country;
+};
 
 
-
-module.exports = {getAllCountries, getCountryById,};
+module.exports = {getAllCountries, getCountryById, getCountryByName};
