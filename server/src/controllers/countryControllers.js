@@ -32,6 +32,10 @@ const getCountryByName = async (name) => {
                 [Op.iLike]: `%${name}%`,
             },
         },
+        include: {
+            model: Activity,
+            through: {attributes: []},
+        }
     });
     return country;
 };

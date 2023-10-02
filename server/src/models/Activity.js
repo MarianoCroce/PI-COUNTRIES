@@ -5,6 +5,12 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Activity', {
 
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+    },
+
     name : {
         type: DataTypes.STRING,
         allowNull: false,
@@ -19,12 +25,12 @@ module.exports = (sequelize) => {
         },
     },
     
-    durationHours: {
+    duration: {
         type:DataTypes.FLOAT,
     },
 
     season: {
-        type: DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
+        type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring'),
     },
     
   });
