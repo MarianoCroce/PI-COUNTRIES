@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 const DetailComponent = (props) => {
     const {isLoading, countryData, selectedActivity, setSelectedActivity} = props;
-    console.log(countryData)
+    
 
     return (
         <div>

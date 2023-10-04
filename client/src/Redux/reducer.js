@@ -91,7 +91,7 @@ import {
             });
             return {
                 ...state,
-                countries: sortedByPopulation
+                countries: sortedByPopulation,
             };
             
         case FILTER_BY_CONTINENT:
