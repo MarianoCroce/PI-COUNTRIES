@@ -95,7 +95,7 @@ import {
             };
             
         case FILTER_BY_CONTINENT:
-            const filteredByContinent = state.countries.filter((country) => country.continent === action.payload);
+            const filteredByContinent = state.countries.filter((country) => country.continents === action.payload);
             return {
                 ...state,
                 searchResults: filteredByContinent,

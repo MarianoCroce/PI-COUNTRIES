@@ -93,8 +93,8 @@ export const sortByPopulation = (order) => {
     return {type: SORT_BY_POPULATION, payload: order}
 }
 
-export const filterByContinent = (continent) => {
-    return {type: FILTER_BY_CONTINENT, payload: continent}
+export const filterByContinent = (continents) => {
+    return {type: FILTER_BY_CONTINENT, payload: continents}
 }
 
 export const filterByActivity = (activity) => {

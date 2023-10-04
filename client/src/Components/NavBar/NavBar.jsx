@@ -34,8 +34,8 @@ const NavBar = () => {
     };
 
     const handleContinentFilter = (event) => {
-        const continent = event.target.value;
-        dispatch(filterByContinent(continent));
+        const continents = event.target.value;
+        dispatch(filterByContinent(continents));
     };
 
     const handleActivityFilter = (event) => {
@@ -83,16 +83,13 @@ const NavBar = () => {
                     <option value="desc">Z-A</option>
                 </select>
                 <select onChange={handlePopulationSort}>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="">Sort by Population</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
                 </select>
             </div>
         </div>
     )
+};
 
-
-
-
-
-} 
+export default NavBar;

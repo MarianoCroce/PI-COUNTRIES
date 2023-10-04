@@ -5,12 +5,13 @@ import { getCountries, getActivities } from "./Redux/actions";
 import Landing from "./Views/Landing/Landing";  
 import Home from "./Views/Home/Home";
 import Detail from "./Views/Detail/DetailView";
+import NavBar from "./Components/NavBar/NavBar";
 import axios from "axios";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
 
-  const {pathName} = useLocation();
+  const location = useLocation({});
 
   const dispatch = useDispatch();
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <div>{location.pathname === "/home" && <NavBar/>}</div>
 
       <Routes>
         <Route path="/" element={<Landing/>}/>
