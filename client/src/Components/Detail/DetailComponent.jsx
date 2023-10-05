@@ -1,34 +1,38 @@
 import {Link} from "react-router-dom";
 
 const DetailComponent = (props) => {
-    const {isLoading, countryData, selectedActivity, setSelectedActivity} = props;
+    const {isLoading, countryDetail, selectedActivity, setSelectedActivity} = props;
+        
     
 
     return (
         <div>
-            {countryData && (
-                <div key={countryData.id}>
-                    <h1>Name: {countryData.name}</h1>
-                    <h2>ID: {countryData.id}</h2>
-                    <img src={countryData.image} alt={countryData.name}/>
-                    <h2>Continent: {countryData.continents}</h2>
-                    <h2>Capital: {countryData.capital}</h2>
-                    <h2>Subregion: {countryData.subregion}</h2>
-                    <h2>Area: {countryData.area}</h2>
-                    <h2>Population: {countryData.population} inhabitants</h2>
-                    <h2>
-                        Activities:{" "}
-                        {countryData.activities && countryData.activities.length > 0 ? (
-                            countryData.activities.map((activity) => (
-                                <ul key={activity.id}>
-                                    <li
-                                        onMouseOver={() => setSelectedActivity(activity)}
-                                        onMouseOut={() => setSelectedActivity(null)}
-                                    >{`${activity.name}`}</li>
-                                </ul>
-                            ))) : (
-                                <span>No available activities</span>
-                        )}
+            {countryDetail && (
+                <div key={countryDetail.id}>
+                    <h1>Name: {countryDetail.name}</h1>
+                    <h2>ID: {countryDetail.id}</h2>
+                    <img src={countryDetail.image} alt={countryDetail.name}/>
+                    <h2>Continent: {countryDetail.continents}</h2>
+                    <h2>Capital: {countryDetail.capital}</h2>
+                    <h2>Subregion: {countryDetail.subregion}</h2>
+                    <h2>Area: {countryDetail.area}</h2>
+                    <h2>Population: {countryDetail.population} inhabitants</h2>
+                    <h2>Activities:</h2>
+                    <ul>
+                    {countryDetail.Activities && countryDetail.Activities.length >= 0 ? (
+                        countryDetail.Activities.map((activity) => (
+                <li
+                  key={activity.id}
+                //   onMouseOver={() => setSelectedActivity(activity)}
+                //   onMouseOut={() => setSelectedActivity(null)}
+                >
+                  {activity.name}
+                </li>
+              ))
+            ) : (
+              <li>No available activities</li>
+            )}
+          </ul>
                         {selectedActivity && (
                             <div>
                             <p>Difficulty: {selectedActivity.difficulty}</p>
@@ -36,7 +40,7 @@ const DetailComponent = (props) => {
                             <p>Season: {selectedActivity.season}</p>
                             </div>
                         )}
-                    </h2>
+                    
                 </div>
             )}
             <div>
@@ -47,3 +51,18 @@ const DetailComponent = (props) => {
 }
 
 export default DetailComponent;
+
+
+{/* <h2>
+                        
+                        Activities:{" "}
+                        {countryDetail.activities && countryDetail.activities.length > 0 ? (
+                            countryDetail.activities.map((activity) => (
+                                
+                                <ul key={activity.id}>
+                                    <li
+                                        onMouseOver={() => setSelectedActivity(activity)}
+                                        onMouseOut={() => setSelectedActivity(null)}
+                                    >{`${activity.name}`}</li>
+                                </ul>
+                            ))) */}

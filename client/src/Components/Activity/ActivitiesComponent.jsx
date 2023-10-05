@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 const ActivitiesComponent = (props) => {
     const {activities, handleDelete} = props;
 
+    console.log(activities)
+
     return (
         <div>
             <div>
@@ -16,11 +18,13 @@ const ActivitiesComponent = (props) => {
                     <p>Difficulty: {activity.difficulty}</p>
                     <p>Duration: {activity.duration}</p>
                     <p>Season: {activity.season}</p>
-                    <p>Countries: {activity.countries}</p>
+                    <p>Countries: {activity.Countries.map((country, countryIndex) => country.name).join(', ')}</p>
                 </div>
             ))}
+
             <div>
-                <Link to={"/home"} />
+                
+                <Link to={"/home"}><button>Home</button></Link> 
             </div>
 
         </div>

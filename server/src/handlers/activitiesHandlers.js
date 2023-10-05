@@ -10,7 +10,6 @@ const postActivityHandler = async(req, res) => {
         res.status(201).send("Activity created successfully");
     } catch (error) {
         if(
-            error.message === "The activity aready exists" ||
             error.message === "The activity must have at least one country"
         ){
         res.status(409).send(error.message);

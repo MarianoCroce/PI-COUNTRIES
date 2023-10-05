@@ -2,21 +2,26 @@ const {Activity} = require("../db.js");
 const {Country} = require("../db.js");
 
 const createActivityController = async (name, difficulty, duration, season, countries) => {
-
-    const createdActivity = await Activity.findOne({
-        where: {name}
-    });
-    if(createdActivity) {
-        throw new Error("The activity already exists");
-    }
+    
     if(!countries || countries.length === 0) {
         throw new Error("The activity must have at least one country");
     }
-    const newActivity = await Activity.create({
-        name, difficulty, duration, season,
+
+    const existingActivity = await Activity.findOne({
+        where: {name}
     });
-    await newActivity.setCountries(countries);
-    return newActivity;
+
+    if(existingActivity) {
+        await existingActivity.addCountries(countries);
+        return existingActivity;
+    } else {
+        const newActivity = await Activity.create({
+            name, difficulty, duration, season,
+        });
+        
+        await newActivity.addCountries(countries);
+        return newActivity;
+    }
 };
 
 const getActivitiesController = async () => {

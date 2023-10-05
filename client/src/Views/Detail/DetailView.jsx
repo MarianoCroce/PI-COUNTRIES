@@ -7,7 +7,7 @@ import DetailComponent from "../../Components/Detail/DetailComponent";
 const Detail = () => {
 
     const dispatch = useDispatch();
-    const countryData = useSelector((state) => state.countryDetail);
+    const countryDetail = useSelector((state) => state.countryDetail);
     const {detailId} = useParams();
     const [selectedActivity, setSelectedActivity] = useState(null);
 
@@ -19,7 +19,7 @@ const Detail = () => {
     return(
         <div>
             <DetailComponent
-            countryData={countryData}
+            countryDetail={countryDetail}
             selectedActivity={selectedActivity}
             setSelectedActivity={setSelectedActivity}
             />
