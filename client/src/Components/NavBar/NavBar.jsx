@@ -66,10 +66,10 @@ const NavBar = () => {
 
     return (
         <div>
-            <Link>
+            <Link to="/form">
             <h2>New Activity</h2>
             </Link>
-            <Link>
+            <Link to="/activities">
             <h2>Activities</h2>
             </Link>
             <div>
