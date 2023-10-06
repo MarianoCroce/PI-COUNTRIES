@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { useParams } from "react-router-dom";
 import {getCountryDetail} from "../../Redux/actions";
 import DetailComponent from "../../Components/Detail/DetailComponent";
+import { clearDetail } from "../../Redux/actions"; 
 
 const Detail = () => {
 
@@ -14,6 +15,10 @@ const Detail = () => {
     useEffect(() =>{
         dispatch(getCountryDetail(detailId));
     }, [dispatch, detailId]);
+
+    useEffect(() =>{
+        dispatch(clearDetail())
+    },[]);
 
 
     return(

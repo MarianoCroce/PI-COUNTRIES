@@ -21,6 +21,11 @@ module.exports = (sequelize) => {
 
     },
 
+    maps: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
     continents: {
       type: DataTypes.STRING,
       allowNull: false,

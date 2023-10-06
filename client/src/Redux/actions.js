@@ -6,11 +6,8 @@ import {
   POST_ACTIVITY,
   GET_ACTIVITIES,
   DELETE_ACTIVITY,
+  CLEAR_DETAIL,
   FILTER,
-//   SORT_BY_NAME,
-//   SORT_BY_POPULATION,
-//   FILTER_BY_CONTINENT,
-//   FILTER_BY_ACTIVITY,
 } from "./action-types";
 
 import axios from "axios";
@@ -86,22 +83,10 @@ export const deleteActivity = (id) => {
     }
 }
 
-// export const sortByName = (order) => {
-//     return {type: SORT_BY_NAME, payload: order}
-// }
-
-// export const sortByPopulation = (order) => {
-//     return {type: SORT_BY_POPULATION, payload: order}
-// }
-
-// export const filterByContinent = (continents) => {
-//     return {type: FILTER_BY_CONTINENT, payload: continents}
-// }
-
-// export const filterByActivity = (activity) => {
-//     return {type: FILTER_BY_ACTIVITY, payload: activity}
-// };
-
 export const combinedFilter = (filterType, value) => {
     return {type: FILTER, payload: {filterType, value}}
 }
+
+export const clearDetail = () =>({
+    type: CLEAR_DETAIL,
+  })

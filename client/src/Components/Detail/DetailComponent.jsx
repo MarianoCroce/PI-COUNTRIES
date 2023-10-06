@@ -1,7 +1,9 @@
 import {Link} from "react-router-dom";
 
 const DetailComponent = (props) => {
-    const {isLoading, countryDetail, selectedActivity, setSelectedActivity} = props;
+    const {countryDetail, selectedActivity} = props;
+
+    console.log("Soy Detail", countryDetail.maps)
         
     
 
@@ -12,6 +14,8 @@ const DetailComponent = (props) => {
                     <h1>Name: {countryDetail.name}</h1>
                     <h2>ID: {countryDetail.id}</h2>
                     <img src={countryDetail.image} alt={countryDetail.name}/>
+                    <img src={countryDetail.maps} alt={`Map of ${countryDetail.name}`}/>
+                  
                     <h2>Continent: {countryDetail.continents}</h2>
                     <h2>Capital: {countryDetail.capital}</h2>
                     <h2>Subregion: {countryDetail.subregion}</h2>
@@ -23,8 +27,6 @@ const DetailComponent = (props) => {
                         countryDetail.Activities.map((activity) => (
                 <li
                   key={activity.id}
-                //   onMouseOver={() => setSelectedActivity(activity)}
-                //   onMouseOut={() => setSelectedActivity(null)}
                 >
                   {activity.name}
                 </li>

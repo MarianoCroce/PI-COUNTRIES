@@ -3,14 +3,11 @@ import {
   GET_COUNTRY_DETAIL,
   SEARCH_COUNTRIES,
   CLEAR_SEARCH,
+  CLEAR_DETAIL,
   POST_ACTIVITY,
   GET_ACTIVITIES,
   DELETE_ACTIVITY,
   FILTER,
-  // SORT_BY_NAME,
-  // SORT_BY_POPULATION,
-  // FILTER_BY_CONTINENT,
-  // FILTER_BY_ACTIVITY,
 } from "./action-types";
 
 const initialState = {
@@ -49,6 +46,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         searchResults: [],
       };
+
+    case CLEAR_DETAIL:
+      return {
+        ...state,
+        countryDetail: [],
+      } 
 
     case POST_ACTIVITY:
       return {
@@ -112,66 +115,11 @@ const rootReducer = (state = initialState, action) => {
           countries: countriesFiltered,
           filtered: filtered,
         };
-      
-      
-      
+    
           default:
               return { ...state };
           }
       };
 
-          
-      
       export default rootReducer;
-        // if (filtered.population == "asc") {
-        //     countriesFiltered.sort((a, b) => a.population - b.population);
-        // } else {
-        //     countriesFiltered.sort((a, b) => b.population - a.population);
-        // }
         
-        // case SORT_BY_POPULATION:
-        //   const sortedByPopulation = [...state.countries].sort((a, b) => {
-        //     if (action.payload === "asc") {
-        //       return a.population - b.population;
-        //     } else {
-        //       return b.population - a.population;
-        //     }
-        //   });
-        //   return {
-        //     ...state,
-        //     countries: sortedByPopulation,
-        //   };
-
-// case SORT_BY_NAME:
-//   const sortedByName = [...state.countries].sort((a, b) => {
-//     if (action.payload === "asc") {
-//       return a.name.localeCompare(b.name);
-//     } else {
-//       return b.name.localeCompare(a.name);
-//     }
-//   });
-//   return {
-//     ...state,
-//     countries: sortedByName,
-//   };
-
-
-// case FILTER_BY_CONTINENT:
-//   const filteredByContinent = state.countries.filter(
-//     (country) => country.continents === action.payload
-//   );
-//   return {
-//     ...state,
-//     searchResults: filteredByContinent,
-//   };
-
-// case FILTER_BY_ACTIVITY:
-//   const filteredByActivity = state.countries.filter((country) => {
-//     return country.Activities.some(
-//       (activity) => activity.name === action.payload
-//     );
-//   });
-//   return {
-//     ...state,
-//     searchResults: filteredByActivity,
-//   };
