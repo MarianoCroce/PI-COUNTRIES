@@ -51,18 +51,3 @@ const DetailComponent = (props) => {
 }
 
 export default DetailComponent;
-
-
-{/* <h2>
-                        
-                        Activities:{" "}
-                        {countryDetail.activities && countryDetail.activities.length > 0 ? (
-                            countryDetail.activities.map((activity) => (
-                                
-                                <ul key={activity.id}>
-                                    <li
-                                        onMouseOver={() => setSelectedActivity(activity)}
-                                        onMouseOut={() => setSelectedActivity(null)}
-                                    >{`${activity.name}`}</li>
-                                </ul>
-                            ))) */}

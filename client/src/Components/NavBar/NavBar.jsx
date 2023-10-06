@@ -58,7 +58,7 @@ const NavBar = () => {
     useEffect(() => {
         if (selectedContinent) {
             setSelectedActivity("")
-
+            
         }
     }, [selectedContinent])
 

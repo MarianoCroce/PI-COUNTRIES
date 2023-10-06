@@ -48,7 +48,7 @@ import {
                     if (country.id === action.payload.id) {
                         return {
                             ...country,
-                            activities: [...country.activities, action.payload],
+                            activities: [...country.Activities, action.payload],
                         };
                     } else {
                         return country;
@@ -103,7 +103,7 @@ import {
 
         case FILTER_BY_ACTIVITY:
             const filteredByActivity = state.countries.filter((country) => {
-                return country.activities.some((activity) => activity.name === action.payload);
+                return country.Activities.some((activity) => activity.name === action.payload);
             });
             return {
                 ...state,
