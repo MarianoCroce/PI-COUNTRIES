@@ -1,8 +1,9 @@
 import Cards from "../../Components/Cards/Cards";
+import Styles from "./home.module.css";
 
 const Home = () => {
     return (
-        <div>
+        <div className={Styles.homeContainer}>
             <Cards/>
         </div>
     )

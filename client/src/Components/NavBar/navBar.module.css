@@ -1,0 +1,24 @@
+.navBarContainer {
+
+    border: solid black;
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    height: 5vh;
+
+
+    
+}
+
+.searchInput {
+
+    width: 30%;
+
+}
+
+
+.filtersContainer select {
+
+    height: 100%;
+
+}

@@ -4,6 +4,7 @@ import { clearSearch } from "../../Redux/actions";
 
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
+import Styles from "./cards.module.css";
 
 const Cards = () => {
 
@@ -43,7 +44,8 @@ const Cards = () => {
     }
 
     return (
-        <div>
+        <div className={Styles.cardsContainer}>
+           <div className={Styles.cards}>
             {currentCountries.map((country) => (
                 <Card
                     key={country.id}
@@ -53,7 +55,7 @@ const Cards = () => {
                     continents={country.continents}
                 />
             ))}
-
+            </div>
             <Pagination
             currentPage={currentPage}
             totalPages={pageNumbers}

@@ -6,6 +6,7 @@ import {
   searchCountries,
   combinedFilter,
 } from "../../Redux/actions";
+import Styles from "./navBar.module.css";
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -67,21 +68,22 @@ const NavBar = () => {
   ]);
 
   return (
-    <div>
-      <Link to="/form">
-        <h2>New Activity</h2>
-      </Link>
+    <div className={Styles.navBarContainer}>
+      <input
+        className={Styles.searchInput}
+        type="text"
+        placeholder="Search Country"
+        onChange={handleSearch}
+      />
       <Link to="/activities">
         <h2>Activities</h2>
       </Link>
-      <div>
-        <input
-          type="text"
-          placeholder="Search Country"
-          onChange={handleSearch}
-        />
-      </div>
-      <div>
+      <Link to="/form">
+        <h2>New Activity</h2>
+      </Link>
+      
+      
+      <div className={Styles.filtersContainer}>
         <select onChange={handleContinentFilter}>
           <option value="">Filter by Continent</option>
           <option value="Antarctica">Antarctica</option>

@@ -1,0 +1,10 @@
+.formContainer {
+
+    border: solid green;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    box-sizing: border-box;
+
+}

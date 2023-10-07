@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteActivity } from "../../Redux/actions";
 import ActivitiesComponent from "../../Components/Activity/ActivitiesComponent";
+import Styles from "./activitiesView.module.css";
 
 const Activities = () => {
 
@@ -18,7 +19,7 @@ const Activities = () => {
     );
 
     return (
-        <div>
+        <div className={Styles.activitiesContainer}>
             <ActivitiesComponent activities={activities} handleDelete={handleDelete} />
         </div>
     )

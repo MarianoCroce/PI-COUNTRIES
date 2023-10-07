@@ -1,14 +1,12 @@
 import {Link} from "react-router-dom";
+import Styles from "./detailComponent.module.css";
+
 
 const DetailComponent = (props) => {
     const {countryDetail, selectedActivity} = props;
 
-    console.log("Soy Detail", countryDetail.maps)
-        
-    
-
     return (
-        <div>
+        <div className={Styles.detailComponent}>
             {countryDetail && (
                 <div key={countryDetail.id}>
                     <h1>Name: {countryDetail.name}</h1>

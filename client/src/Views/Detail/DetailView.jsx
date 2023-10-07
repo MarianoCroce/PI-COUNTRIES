@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import {getCountryDetail} from "../../Redux/actions";
 import DetailComponent from "../../Components/Detail/DetailComponent";
 import { clearDetail } from "../../Redux/actions"; 
+import Styles from "./detailView.module.css";
 
 const Detail = () => {
 
@@ -22,7 +23,7 @@ const Detail = () => {
 
 
     return(
-        <div>
+        <div className={Styles.detailContainer}>
             <DetailComponent
             countryDetail={countryDetail}
             selectedActivity={selectedActivity}

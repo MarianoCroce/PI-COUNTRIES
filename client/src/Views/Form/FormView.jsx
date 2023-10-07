@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { postActivity } from "../../Redux/actions";
 import FormComponent from "../../Components/Form/FormComponent";
+import Styles from "./form.module.css";
 
 const Form = ({ countries }) => {
 
@@ -107,7 +108,7 @@ const filteredCountries = countriesState.filter((country) =>
 );
 
 return (
-    <div>
+    <div className={Styles.formContainer}>
         <FormComponent
         handleChange={handleChange}
         handleCountrySelect={handleCountrySelect}

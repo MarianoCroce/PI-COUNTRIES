@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import Form from "./Views/Form/FormView";
 import Activities from "./Views/Activities/ActivitiesView";
 import axios from "axios";
+import "./App.css";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="App">
       <div>{location.pathname === "/home" && <NavBar/>}</div>
 
       <Routes>
