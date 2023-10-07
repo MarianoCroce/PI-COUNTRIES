@@ -11,9 +11,7 @@ const DetailComponent = (props) => {
                 <div key={countryDetail.id}>
                     <h1>Name: {countryDetail.name}</h1>
                     <h2>ID: {countryDetail.id}</h2>
-                    <img src={countryDetail.image} alt={countryDetail.name}/>
-                    <img src={countryDetail.maps} alt={`Map of ${countryDetail.name}`}/>
-                  
+                    <img src={countryDetail.image} alt={countryDetail.name}/>               
                     <h2>Continent: {countryDetail.continents}</h2>
                     <h2>Capital: {countryDetail.capital}</h2>
                     <h2>Subregion: {countryDetail.subregion}</h2>
@@ -44,7 +42,7 @@ const DetailComponent = (props) => {
                 </div>
             )}
             <div>
-                <Link to={"/home"}><button>Home</button></Link>
+                <Link to={"/home"} className={Styles.bn39} href="/home"><span className={Styles.bn39span}>Home</span></Link>
             </div>
         </div>
     )
