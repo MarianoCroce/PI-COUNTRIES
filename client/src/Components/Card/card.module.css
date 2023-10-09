@@ -1,23 +1,31 @@
 #cardContainer {
-
-    border: solid rgb(49, 24, 238);
-    max-width: 20%;
-    min-width: 20%;
+    width: calc(20% - 10px); /* Establece el ancho para 5 tarjetas por fila con margen igual */
     display: flex;
     height: 50%;
     flex-direction: column;
     max-height: 50%;
     box-sizing: border-box;
     align-items: center;
+    text-decoration: none; /* Eliminar subrayado */
+    color: inherit; /* Heredar el color del texto del contenedor padre */
+    cursor: pointer; /* Cambiar el cursor al puntero */
+    transition: all 0.3s; /* Animación de 0.3 segundos para suavizar el cambio */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Efecto box-shadow predeterminado */
+    margin: 0 5px 10px 5px; /* Margen igual en todos los lados */
+}
 
-
+#cardContainer:hover {
+    transform: scale(0.95); /* Reducción proporcional al pasar el cursor */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Efecto box-shadow al pasar el cursor */
 }
 
 #img {
-
     min-width: 100%;
     max-width: 100%;
     max-height: 50%;
     min-height: 50%;
+}
 
+#cardContent {
+    color: white; 
 }

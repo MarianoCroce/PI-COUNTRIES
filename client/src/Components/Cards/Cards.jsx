@@ -7,7 +7,6 @@ import Pagination from "../Pagination/Pagination";
 import Styles from "./cards.module.css";
 
 const Cards = () => {
-
     const dispatch = useDispatch();
 
     const countries = useSelector((state) => {
@@ -15,10 +14,10 @@ const Cards = () => {
             ? state.searchResults
             : state.countries;
     });
-    
+
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage] = useState(10);
-    
+
     useEffect(() => {
         setCurrentPage(1);
         dispatch(clearSearch());
@@ -38,31 +37,30 @@ const Cards = () => {
     };
 
     if (currentCountries.length === 0) {
-        return (
-            <p>Network Error</p>
-        );
+        return <p>Network Error</p>;
     }
 
     return (
         <div className={Styles.cardsContainer}>
-           <div className={Styles.cards}>
-            {currentCountries.map((country) => (
-                <Card
-                    key={country.id}
-                    id={country.id}
-                    name={country.name}
-                    image={country.image}
-                    continents={country.continents}
-                />
-            ))}
+            <div className={Styles.cards}>
+                {currentCountries.map((country) => (
+                    <Card
+                        key={country.id}
+                        id={country.id}
+                        name={country.name}
+                        image={country.image}
+                        continents={country.continents}
+                        className={Styles.card}
+                    />
+                ))}
             </div>
             <Pagination
-            currentPage={currentPage}
-            totalPages={pageNumbers}
-            handlePageClick={handlePageClick}
-            />    
+                currentPage={currentPage}
+                totalPages={pageNumbers}
+                handlePageClick={handlePageClick}
+            />
         </div>
-    )
+    );
 };
 
 export default Cards;
