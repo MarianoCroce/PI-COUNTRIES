@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./formComponent.module.css"; // Importa los estilos del módulo CSS
+import Styles from "./formComponent.module.css"; // Importa los estilos del módulo CSS
 
 const FormComponent = (props) => {
   const {
@@ -16,8 +16,8 @@ const FormComponent = (props) => {
   } = props;
 
   return (
-    <div className={styles.formContainer}>
-      <form onSubmit={handleSubmit} className={styles.form}>
+    <div className={Styles.formContainer}>
+      <form onSubmit={handleSubmit} className={Styles.form}>
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -60,8 +60,8 @@ const FormComponent = (props) => {
 
           <label htmlFor="countries">Countries</label>
           <input type="text" onChange={handleSearch} value={searchTerm} />
-        <div className={styles.countries}>
-          <ul className={styles.countriesToAdd}>
+        <div className={Styles.countries}>
+          <ul className={Styles.countriesToAdd}>
             {filteredCountries.map((country) => (
               <li key={country.id}>
                 {country.name}{" "}
@@ -94,12 +94,13 @@ const FormComponent = (props) => {
         {!errorMessage.name &&
           !errorMessage.countries &&
           !errorMessage.other &&
-          !success && <button type="submit">Create</button>}
+          !success && <button className={Styles.bn39} type="submit">Create</button>}
         {errorMessage.other && !success && (
           <span>{errorMessage.other}</span>
         )}
         {errorMessage.other && (
           <button
+          className={Styles.bn39}
             onClick={() => {
               window.location.reload();
             }}
@@ -108,12 +109,12 @@ const FormComponent = (props) => {
           </button>
         )}
         {success && (
-          <button onClick={() => window.location.reload()}>OK</button>
+          <button className={Styles.bn39} onClick={() => window.location.reload()}>OK</button>
         )}
       </form>
-      <Link to="/home">
-        <button>Home</button>
-      </Link>
+      <Link id={Styles.link} to={"/home"}>
+        <div className={Styles.bn39} href="/"><span className={Styles.bn39span}>Home</span></div>
+        </Link>
     </div>
   );
 };
