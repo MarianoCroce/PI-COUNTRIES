@@ -37,7 +37,7 @@ const Cards = () => {
     };
 
     if (currentCountries.length === 0) {
-        return <p>Network Error</p>;
+        return <p>No Countries Found</p>;
     }
 
     return (

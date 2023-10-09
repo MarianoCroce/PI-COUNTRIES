@@ -66,6 +66,7 @@ const FormComponent = (props) => {
               <li key={country.id}>
                 {country.name}{" "}
                 <button
+                  className={Styles.addButton}
                   type="button"
                   onClick={() => handleCountrySelect(country)}
                 >

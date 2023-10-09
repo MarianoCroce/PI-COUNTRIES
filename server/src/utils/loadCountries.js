@@ -29,7 +29,7 @@ const loadCountries = async () => {
                     population: countryInfo.population,
                     continents: countryInfo.continents,
                     subregion: countryInfo.subregion === undefined ? 'null' : countryInfo.subregion,
-                    capital: countryInfo.capital === undefined ? 'null' : countryInfo.capital[0]  //&& countryInfo.capital[0],
+                    capital: countryInfo.capital === undefined ? 'null' : countryInfo.capital[0] 
                 },
 
             });

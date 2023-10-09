@@ -12,6 +12,7 @@
     transition: all 0.3s; /* Animación de 0.3 segundos para suavizar el cambio */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Efecto box-shadow predeterminado */
     margin: 0 5px 10px 5px; /* Margen igual en todos los lados */
+    background-color: #10418b;
 }
 
 #cardContainer:hover {

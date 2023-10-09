@@ -32,7 +32,7 @@
     flex-wrap: nowrap;
     max-height: 85vh;
     overflow-y: scroll;
-    border: 1px solid blue;
+    background-color: #10418b;
     width: 100%;
 }
 
@@ -116,4 +116,8 @@
 
     text-decoration: none;
 
+}
+
+.addButton {
+    color:white
 }
