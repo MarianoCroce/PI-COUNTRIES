@@ -1,59 +1,77 @@
 .navBarContainer {
-
-    border: solid black;
-    display: flex;
-    justify-content: space-between;
-    gap: 10%;
-    height: 5vh;
-
-
-    
+  border: solid black;
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+  height: 5vh;
 }
 
 .searchInput {
-
-    width: 30%;
-
+  width: 30%;
 }
-
 
 .filtersContainer select {
-
-    height: 100%;
-
+  height: 100%;
 }
 
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilos para el botón .bn39 */
 .bn39 {
-    background-image: linear-gradient(135deg, #008aff, #86d472);
-    border-radius: 6px;
-    box-sizing: border-box;
-    color: #ffffff;
-    display: block;
-    height: 50px;
-    font-size: 1.4em;
-    font-weight: 600;
-    padding: 4px;
-    position: relative;
-    text-decoration: none;
-    width: 7em;
-    z-index: 2;
-  }
-  
-  .bn39:hover {
-    color: #fff;
-  }
-  
-  .bn39 .bn39span {
-    align-items: center;
-    background: #0e0e10;
-    border-radius: 6px;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    transition: background 0.5s ease;
-    width: 100%;
-  }
-  
-  .bn39:hover .bn39span {
-    background: transparent;
-  }
+  background-image: linear-gradient(135deg, #008aff, #86d472);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 1.2em; /* Tamaño del texto para el botón principal */
+  font-weight: 600;
+  padding: 4px; /* Espaciado interno del botón principal */
+  text-decoration: none;
+  z-index: 2;
+  height: 40px; /* Altura del botón */
+  width: auto; /* Ancho automático para el contenido del botón */
+}
+
+/* Estilos para el botón .bn39 */
+.bn39 {
+  background-image: linear-gradient(135deg, #008aff, #86d472);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 1.2em; /* Tamaño del texto para el botón principal */
+  font-weight: 600;
+  padding: 4px; /* Espaciado interno del botón principal */
+  text-decoration: none;
+  z-index: 2;
+  height: 40px; /* Altura del botón */
+  width: auto; /* Ancho automático para el contenido del botón */
+}
+
+/* Estilos para el texto dentro del botón principal */
+.bn39 > span {
+  font-size: 0.8em; /* Tamaño de fuente más pequeño para el texto dentro del botón */
+  letter-spacing: 2px; /* Espaciado entre las letras */
+  margin-right: 5px; /* Espaciado entre el texto y la parte negra */
+}
+
+.bn39:hover {
+  color: #fff;
+}
+
+.bn39 .bn39span {
+  align-items: center;
+  background: #0e0e10;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.5s ease;
+  width: 100%;
+}
+
+.bn39:hover .bn39span {
+  background: transparent;
+}
+

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  clearSearch,
-  searchCountries,
-  combinedFilter,
-} from "../../Redux/actions";
+import { clearSearch, searchCountries, combinedFilter } from "../../Redux/actions";
 import Styles from "./navBar.module.css";
 
 const NavBar = () => {
@@ -75,14 +71,14 @@ const NavBar = () => {
         placeholder="Search Country"
         onChange={handleSearch}
       />
-      <Link to="/activities">
-        <h2>Activities</h2>
-      </Link>
-      <Link to="/form">
-        <h2>New Activity</h2>
-      </Link>
-      
-      
+      <div className={Styles.buttonContainer}>
+        <Link to="/activities" className={Styles.bn39}>
+          <span className={Styles.bn39span}>Activities</span>
+        </Link>
+        <Link to="/form" className={Styles.bn39}>
+          <span className={Styles.bn39span}>New Activity</span>
+        </Link>
+      </div>
       <div className={Styles.filtersContainer}>
         <select onChange={handleContinentFilter}>
           <option value="">Filter by Continent</option>
