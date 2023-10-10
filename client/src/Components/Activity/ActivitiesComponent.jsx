@@ -4,7 +4,7 @@ import Styles from "./activitiesComponent.module.css";
 const ActivitiesComponent = (props) => {
   const { activities, handleDelete } = props;
 
-  console.log(activities);
+  
 
   return (
     <div>

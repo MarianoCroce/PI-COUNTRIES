@@ -18,8 +18,8 @@
     min-height: 95%;
 }
 
-/* Agrega margen entre las tarjetas */
+
 .card {
-    margin-right: 10px; /* Espacio a la derecha de cada tarjeta */
-    margin-bottom: 10px; /* Espacio debajo de cada tarjeta */
+    margin-right: 10px; 
+    margin-bottom: 10px; 
 }

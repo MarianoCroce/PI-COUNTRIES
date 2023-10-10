@@ -38,7 +38,7 @@ const Pagination = ({ currentPage, totalPages, handlePageClick }) => {
           <span className={Styles.bn39span}>1</span>
         </button>
       )}
-      {startPage > 2 && <span>...</span>}
+      {startPage > 2 && <span className={Styles.dots}>...</span>}
       {pageNumbers.map((number) => (
         <button
           key={number}
@@ -50,7 +50,7 @@ const Pagination = ({ currentPage, totalPages, handlePageClick }) => {
           <span className={Styles.bn39span}>{number}</span>
         </button>
       ))}
-      {endPage < totalPages - 1 && <span>...</span>}
+      {endPage < totalPages - 1 && <span className={Styles.dots}>...</span>}
       {endPage < totalPages && (
         <button
           onClick={() => handlePageClick(totalPages)}
