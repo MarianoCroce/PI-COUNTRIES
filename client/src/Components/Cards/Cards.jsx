@@ -36,24 +36,24 @@ const Cards = () => {
         setCurrentPage(pageNumber);
     };
 
-    if (currentCountries.length === 0) {
-        return <p>No Countries Found</p>;
-    }
-
     return (
         <div className={Styles.cardsContainer}>
-            <div className={Styles.cards}>
-                {currentCountries.map((country) => (
-                    <Card
-                        key={country.id}
-                        id={country.id}
-                        name={country.name}
-                        image={country.image}
-                        continents={country.continents}
-                        className={Styles.card}
-                    />
-                ))}
-            </div>
+            {currentCountries.length === 0 ? (
+                <p style={{ color: "white", fontSize: "3rem" }}>No Countries Found</p>
+            ) : (
+                <div className={Styles.cards}>
+                    {currentCountries.map((country) => (
+                        <Card
+                            key={country.id}
+                            id={country.id}
+                            name={country.name}
+                            image={country.image}
+                            continents={country.continents}
+                            className={Styles.card}
+                        />
+                    ))}
+                </div>
+            )}
             <Pagination
                 currentPage={currentPage}
                 totalPages={pageNumbers}
