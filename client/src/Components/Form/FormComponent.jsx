@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Styles from "./formComponent.module.css"; // Importa los estilos del módulo CSS
+import Styles from "./formComponent.module.css";
 
 const FormComponent = (props) => {
   const {

@@ -17,7 +17,7 @@ const ActivitiesComponent = (props) => {
           <p>Difficulty: {activity.difficulty}</p>
           <p>Duration: {activity.duration}</p>
           <p>Season: {activity.season}</p>
-          <p>Countries: {activity.Countries.map((country, countryIndex) => country.name).join(", ")}</p>
+          <p>Countries: {activity.Countries.map((country) => country.name).join(", ")}</p>
           <button className={Styles.bn39} onClick={() => handleDelete(activity.id)}>
             X
           </button>
