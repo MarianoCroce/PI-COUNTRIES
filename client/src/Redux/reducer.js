@@ -100,10 +100,10 @@ const rootReducer = (state = initialState, action) => {
         }
         if (filtered.order === "asc") {
           countriesFiltered.sort((a, b) => a.name.localeCompare(b.name));
-        } else {
+        } else if (filtered.order === "desc") {
           countriesFiltered.sort((a, b) => b.name.localeCompare(a.name));
         }
-      
+        
         if (filtered.population === "asc") {
           countriesFiltered.sort((a, b) => a.population - b.population);
         } else if (filtered.population === "desc") {

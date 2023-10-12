@@ -8,6 +8,7 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const activities = useSelector((state) => state.activities);
 
+
   const [selectedContinent, setSelectedContinent] = useState("");
   const [selectedActivity, setSelectedActivity] = useState("");
   const [nameSortOrder, setNameSortOrder] = useState("");
@@ -80,7 +81,7 @@ const NavBar = () => {
         </Link>
       </div>
       <div className={Styles.filtersContainer}>
-        <select onChange={handleContinentFilter}>
+        <select onChange={handleContinentFilter} value={selectedContinent}>
           <option value="">Filter by Continent</option>
           <option value="Antarctica">Antarctica</option>
           <option value="Africa">Africa</option>
@@ -90,7 +91,7 @@ const NavBar = () => {
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
         </select>
-        <select onChange={handleActivityFilter}>
+        <select onChange={handleActivityFilter} value={selectedActivity}>
           <option value="">Filter by Activity</option>
           {activities.map((activity) => (
             <option key={activity.id} value={activity.name}>
@@ -98,12 +99,12 @@ const NavBar = () => {
             </option>
           ))}
         </select>
-        <select onChange={handleNameSort} name="order" id="order">
+        <select onChange={handleNameSort} value={nameSortOrder}>
           <option value="">Sort by Name</option>
           <option value="asc">A-Z</option>
           <option value="desc">Z-A</option>
         </select>
-        <select onChange={handlePopulationSort}>
+        <select onChange={handlePopulationSort} value={populationSortOrder}>
           <option value="">Sort by Population</option>
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>

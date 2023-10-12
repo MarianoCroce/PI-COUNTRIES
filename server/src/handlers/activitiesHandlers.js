@@ -7,7 +7,7 @@ const postActivityHandler = async(req, res) => {
     }
     try {
         const newActivity = await createActivityController(name, difficulty, duration, season, countries);
-        res.status(201).send("Activity created successfully");
+        res.status(201).send("Activity created successfully", newActivity);
     } catch (error) {
         if(
             error.message === "The activity must have at least one country"
