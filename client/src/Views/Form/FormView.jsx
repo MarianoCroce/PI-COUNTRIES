@@ -4,7 +4,7 @@ import { postActivity } from "../../Redux/actions";
 import FormComponent from "../../Components/Form/FormComponent";
 import Styles from "./form.module.css";
 
-const Form = ({ countries }) => {
+const Form = () => {
 
   const dispatch = useDispatch();
   const countriesState = useSelector((state) => state.countries);
